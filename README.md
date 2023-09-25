@@ -17,3 +17,8 @@ The first layer of a standard CNN perform a set of time-domain convolutions betw
 ```math
 y[n] = x[n]*h[n] = \sum_{l=0}^{L-1}x[l]\cdot h[n-l]
 ```
+where **x[n]** is a chunk of speach signal, **h[n]** is the filter of length L and **y[n]** is the filtered output. In standard CNNs all L elements are learned from data. <br>
+The proposed SincNet performs the convolution with a predefined function **g** that depends on few learnable parameters only
+```math
+y[n] = x[n]*g[n, \omega]
+```
