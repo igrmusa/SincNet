@@ -30,3 +30,13 @@ where $f_1$ and  $f_2$ are learned low and high cutoff frequenciesm and **rect**
 ```math
 g[f, f_1, f_2] = 2f_2 sinc(2 \pi f_2 n) - 2f_1 sinc(2 \pi f_1 n))
 ```
+The cut-frequencies can be initialized randomly in the range $[0, f_s /2]$ or alternatively filters can be initialized with cutoff frequencies of the **Mel-Scale** filter bank. <br>
+An ideak bandpass filter requires an infinite number of elements L. Any trunctation of g thus leads to an aproximation of the ideal filter. Popular option to mitigate this is issue is windowing. This is performed by multiplying the trunced function g with a window function $\omega$, which aims to smooth out the abrupt discontinuties at the ends of g. This model use **Hamming windows**. Using other window function were tested by author and they didn't show any improvment of model. <br>
+
+## Model properties
+
+- **Fast Convergence**
+- **Few Parameters**: SincNet drasticly reduces the number of parameters in the first convolutionall layer. For instance, if we consider a layer composed of F filters with length of L, a standard CNN will employ F*L parameters, agains 2*F considered by SuncNet. Moreover, if we double the filter length L, a standard CNN doubles its parameters, while SincNet has unchanged parameter count. This offers the possibility to derive very selective filters with many tapsm without adding parameters to the optimization problem.
+- **Interpretability**: SincNet feature maps obtained in the first convolution layer are more interpretable and human-readable than other approaches.
+
+### Training
