@@ -40,3 +40,4 @@ An ideak bandpass filter requires an infinite number of elements L. Any trunctat
 - **Interpretability**: SincNet feature maps obtained in the first convolution layer are more interpretable and human-readable than other approaches.
 
 ### Training
+Training is done with **RMSprop optimizer**, with learning rade $lr= 0.001$ and  alpha $\alpha = 0.95$ and $epsilon=1e-7$ with minibatches of size 128.
