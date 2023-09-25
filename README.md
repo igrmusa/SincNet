@@ -15,5 +15,5 @@ The major difference between this model and previous attempts to use CNN in this
 ## The SincNet architecture
 The first layer of a standard CNN perform a set of time-domain convolutions between input waveform and some Finite Impulse Response filters. Each convolutions is defined as follows:
 ```math
-y[n] = x[n]*h[n] = \sum{l=0}{L-1}x[l]\cdot h[n-l]
+y[n] = x[n]*h[n] = \sum_{l=0}^{L-1}x[l]\cdot h[n-l]
 ```
