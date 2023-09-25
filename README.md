@@ -33,6 +33,8 @@ g[f, f_1, f_2] = 2f_2 sinc(2 \pi f_2 n) - 2f_1 sinc(2 \pi f_1 n))
 The cut-frequencies can be initialized randomly in the range $[0, f_s /2]$ or alternatively filters can be initialized with cutoff frequencies of the **Mel-Scale** filter bank. <br>
 An ideak bandpass filter requires an infinite number of elements L. Any trunctation of g thus leads to an aproximation of the ideal filter. Popular option to mitigate this is issue is windowing. This is performed by multiplying the trunced function g with a window function $\omega$, which aims to smooth out the abrupt discontinuties at the ends of g. This model use **Hamming windows**. Using other window function were tested by author and they didn't show any improvment of model. <br>
 
+![Sample Image](assets/architecture.png)
+
 ## Model properties
 
 - **Fast Convergence**
@@ -42,4 +44,6 @@ An ideak bandpass filter requires an infinite number of elements L. Any trunctat
 ### Training and evaluation
 Training is done with **RMSprop optimizer**, with  $learning rade = 0.001$ and   $\alpha = 0.95$ and $epsilon=1e-7$ with minibatches of size 128. With training on 10 epoch we reached accuracy 0.7351 on training set and  
 0.4326 on validation set. <br>
-**Note:** Originaly this model have been trained for over 300epochs and it reachs better accuracy on both training and validations set. Due to hardware limitations, we were unable to train the model for more than 10 epochs.
+**Note:** Originaly this model have been trained for over 300epochs and it reachs better accuracy on both training and validations set. Due to hardware limitations, we were unable to train the model for more than 10 epochs. <br>
+
+
