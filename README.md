@@ -42,4 +42,4 @@ An ideak bandpass filter requires an infinite number of elements L. Any trunctat
 ### Training and evaluation
 Training is done with **RMSprop optimizer**, with  $learning rade = 0.001$ and   $\alpha = 0.95$ and $epsilon=1e-7$ with minibatches of size 128. With training on 10 epoch we reached accuracy 0.7351 on training set and  
 0.4326 on validation set. <br>
-**Note:** Originaly this model have been trained for over 300epochs and it reachs better accuracy on both training and validations set.
+**Note:** Originaly this model have been trained for over 300epochs and it reachs better accuracy on both training and validations set. Due to hardware limitations, we were unable to train the model for more than 10 epochs.
