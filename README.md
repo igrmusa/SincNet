@@ -24,5 +24,9 @@ y[n] = x[n]*g[n, \Omega]
 ```
 This function can be written as difference between two low-pass filters:
 ```math
-F[f, f_1, f_2] = rect(\frac{f}{2f_2}) - rect(\frac{f}{2f_1})
+G[f, f_1, f_2] = rect(\frac{f}{2f_2}) - rect(\frac{f}{2f_1})
+```
+where $f_1$ and  $f_2$ are learned low and high cutoff frequenciesm and **rect** is rectangular function in the magnitude frequency domain. After returning to the domain with **IFFT** this function becomes 
+```math
+g[f, f_1, f_2] = 2f_2\sinc(2\pif_2 n) - 2f_1\sinc(2\pif_1 n))
 ```
