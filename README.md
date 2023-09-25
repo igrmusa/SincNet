@@ -20,5 +20,9 @@ y[n] = x[n]*h[n] = \sum_{l=0}^{L-1}x[l]\cdot h[n-l]
 where **x[n]** is a chunk of speach signal, **h[n]** is the filter of length L and **y[n]** is the filtered output. In standard CNNs all L elements are learned from data. <br>
 The proposed SincNet performs the convolution with a predefined function **g** that depends on few learnable parameters only
 ```math
-y[n] = x[n]*g[n, \omega]
+y[n] = x[n]*g[n, \Omega]
+```
+This function can be written as difference between two low-pass filters:
+```math
+F[f, f_1, f_2] = rect(\frac{f}{2f_2}) - rect(\frac{f}{2f_1})
 ```
